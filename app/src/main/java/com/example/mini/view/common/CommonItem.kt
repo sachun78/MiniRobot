@@ -1,12 +1,12 @@
 package com.example.mini.view.common
 
 import android.annotation.SuppressLint
-import android.widget.Toast
+import android.content.Context
+import android.widget.TextClock
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -18,6 +18,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import com.example.mini.data.HospitalMenu
 import com.example.mini.navigation.NavRoute
 import com.example.mini.navigation.RouteAction
@@ -170,20 +171,33 @@ fun GlideImgView(
     )
 }
 
-
-// tk 테스트 용
+/**
+ * TODO 작동 확인 필요/parameter 수정 필요(timeZone/context/format12Hour)
+ *
+ * @param modifier
+ * @param format12Hour "yyyy-MM-dd hh:mm:ss a"꼴
+ * @param format24Hour "hh:mm:ss" 꼴
+ * @param timeZone Asia/Seoul 확인 필요
+ * @param mContext 호출하는 곳의 current context 전달 필요!
+ *
+ * 참고 : https://stackoverflow.com/questions/68025651/whats-the-equivalent-of-textclock-in-jetpack-compose
+ */
 @Composable
-fun BasicView(bodyView: Unit, routeAction: RouteAction) {
-    Scaffold(
-        topBar = { HospitalTopBar(routeAction) },
-        bottomBar = {
-            BottomTTSCaption("test")
+private fun TextClock(
+    modifier: Modifier,
+    format12Hour: String? = null,
+    format24Hour: String? = null,
+    timeZone: String? = null,
+    mContext: Context
+) {
+    AndroidView(
+        factory = { _ -> //it
+            TextClock(mContext).apply {
+                format12Hour?.let { this.format12Hour = it }
+                format24Hour?.let { this.format24Hour = it }
+                timeZone?.let { this.timeZone = it }
+            }
         },
-//        content = {
-////            HomeContent(routeAction = routeAction)
-//            bodyView
-//        })
-    ) {
-        bodyView
-    }
+        modifier = modifier
+    )
 }

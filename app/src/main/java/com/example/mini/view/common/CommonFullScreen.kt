@@ -20,8 +20,6 @@ import com.example.mini.navigation.RouteAction
 import com.skydoves.landscapist.glide.GlideImage
 
 /**
- *
- *
  * @param modifier Modifier
  * @param routeAction routeAction
  * @param caption 하단 자막 내용
