@@ -61,6 +61,7 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    api 'com.google.code.gson:gson:2.7'
 
     // Glide
     implementation "com.github.skydoves:landscapist-glide:1.4.7"
