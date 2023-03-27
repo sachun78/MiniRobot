@@ -1,4 +1,4 @@
-package com.example.mini.view
+package com.example.mini.view.hospital
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -42,7 +42,7 @@ fun HomeContent(routeAction: RouteAction) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 120.dp, bottom = 30.dp),
+            .padding(top = 20.dp, bottom = 30.dp),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

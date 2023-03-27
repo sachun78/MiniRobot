@@ -1,4 +1,4 @@
-package com.example.mini.view
+package com.example.mini.view.hospital
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

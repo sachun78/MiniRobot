@@ -5,7 +5,7 @@ import androidx.compose.runtime.remember
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.mini.view.*
+import com.example.mini.view.hospital.*
 
 @Composable
 fun NavigationGraph(startRoute: NavRoute = NavRoute.MAIN) {

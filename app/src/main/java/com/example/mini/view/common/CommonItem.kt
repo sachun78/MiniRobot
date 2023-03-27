@@ -10,8 +10,6 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.currentComposer
-import androidx.compose.runtime.currentCompositionLocalContext
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -23,7 +21,7 @@ import androidx.compose.ui.unit.sp
 import com.example.mini.data.HospitalMenu
 import com.example.mini.navigation.NavRoute
 import com.example.mini.navigation.RouteAction
-import com.example.mini.view.HospitalBarIcon
+import com.example.mini.view.hospital.HospitalBarIcon
 import com.guru.fontawesomecomposelib.FaIcons
 import com.skydoves.landscapist.glide.GlideImage
 
