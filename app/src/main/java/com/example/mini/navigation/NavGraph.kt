@@ -32,5 +32,7 @@ fun NavigationGraph(startRoute: NavRoute = NavRoute.MAIN) {
         composable(NavRoute.EXISTING_INFORMATION.routeName) { ExistingInformation(routeAction) }
         // 예약 고객
         composable(NavRoute.RESERVATION_CUSTOMER.routeName) { ReservationCustomer(routeAction = routeAction)}
+        // 예약 확인
+        composable(NavRoute.QR_RECOGNITION.routeName) { QrRecognition(routeAction = routeAction) }
     }
 }

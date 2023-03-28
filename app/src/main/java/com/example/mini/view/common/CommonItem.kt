@@ -7,6 +7,7 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
+import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -200,4 +201,16 @@ private fun TextClock(
         },
         modifier = modifier
     )
+}
+
+/**
+ * TODO button design
+ *
+ * @param onClick onClick : () -> Unit
+ */
+@Composable
+fun OutlineTextBtn(onClick: () -> Unit, btnText: String) {
+    OutlinedButton(onClick = { onClick() }, modifier = Modifier.wrapContentSize()) {
+        Text(text = btnText)
+    }
 }
